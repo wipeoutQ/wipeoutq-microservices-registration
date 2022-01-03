@@ -65,8 +65,8 @@ public class TenantController {
         return data;
     }
 
-    @GetMapping("user")
-    public ResponseEntity<Response> findbymobile(@RequestParam(required = false) String mobile){
+    @GetMapping("user/{mobile}")
+    public ResponseEntity<Response> findbymobile(@PathVariable String mobile){
         log.info("[get user list]: user called update");
         boolean data = this.userService.findByMobile(mobile);
         Response response = new Response();
